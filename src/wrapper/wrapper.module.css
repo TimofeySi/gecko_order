@@ -1,0 +1,146 @@
+.Wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1130px;
+    padding: 0 15px;
+    margin: 0px auto;
+}
+
+.panel {
+    height: 80px;
+    min-width: 1130px;
+    background-color: blueviolet;
+
+    display: flex;
+    box-shadow: 0 0 15px 6px rgba(0, 0, 0, 0.411);
+}
+
+.header {}
+
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logoBlock {}
+
+.logoBlock img {
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.buttonsBlock {
+    margin: auto 0;
+}
+
+.buttonsBlock ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    list-style-type: none;
+}
+
+.buttonsBlock li {
+    margin: 0 0 0 40px;
+    transition: color 0.3s ease 0s;
+}
+
+.buttonsBlock li:hover {
+    color: brown;
+}
+
+.delivery {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: help;
+}
+
+.delivery>* {
+    margin: 0 5px;
+}
+
+.dropDown {
+    top: calc(8px + 100%);
+    right: 0;
+    color: #000;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 202px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.delivery:hover .dropDown {
+    display: block;
+}
+
+.basket {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.basket>* {
+    margin: 0 5px;
+}
+
+.main {
+    margin: 20px 0;
+    flex: 1 0 auto;
+}
+
+.footer {
+    height: 470px;
+    flex: 0 0 auto;
+    align-items: flex-start;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footerFirstRow {
+    width: 50%;
+    margin: 10px 0;
+}
+
+.footerFirstRow>* {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer h5 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.footerFirstRow li,
+p {
+    font-size: 13px;
+}
+
+.location {
+    background-color: bisque;
+}
+
+.location h5 {
+    color: darkblue;
+}
