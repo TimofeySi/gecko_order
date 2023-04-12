@@ -40,7 +40,7 @@
     margin: auto 0;
 }
 
-.buttonsBlock ul {
+.buttonsBlock>ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -48,39 +48,45 @@
     list-style-type: none;
 }
 
-.buttonsBlock li {
+.navigationButtons {
     margin: 0 0 0 40px;
     transition: color 0.3s ease 0s;
 }
 
-.buttonsBlock li:hover {
+.navigationButtons:hover {
     color: brown;
+}
+
+.navigationButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .delivery {
     position: relative;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     cursor: help;
 }
 
-.delivery>* {
+.navigationButtons>* {
     margin: 0 5px;
 }
 
 .dropDown {
+    font-size: 14px;
     top: calc(8px + 100%);
     right: 0;
     color: #000;
     display: none;
     position: absolute;
     background-color: #fff;
-    min-width: 202px;
+    min-width: 300px;
     padding: 10px;
     z-index: 1;
+}
+
+.dropDown ul {
+    list-style-type: circle;
 }
 
 .delivery:hover .dropDown {
@@ -88,15 +94,7 @@
 }
 
 .basket {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     cursor: pointer;
-}
-
-.basket>* {
-    margin: 0 5px;
 }
 
 .main {

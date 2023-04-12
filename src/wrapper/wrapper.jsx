@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./wrapper.module.css";
+import GeckoList from "../page_elements/geckoList";
 
 function Wrapper() {
     return (
@@ -11,14 +12,23 @@ function Wrapper() {
                     </div>
                     <div className={classes.buttonsBlock}>
                         <ul>
-                            <li className={classes.delivery}>
+                            <li className={classes.delivery + " " + classes.navigationButtons}>
                                 <img src={require("../images/delivery_icon.png")} height="35px" alt="no" />
                                 <span>Доставка</span>
                                 <div className={classes.dropDown}>
-                                    <p>доставка осуществляется лошадьми</p>
+                                    <span>&emsp;Адреса пунктов самовывоза:<br /></span>
+                                    <ul>
+                                        <li>адрес1</li>
+                                        <li>адрес2</li>
+                                        <li>адрес3</li>
+                                        <li>адрес4</li>
+                                    </ul>
+                                    <span>&emsp;Даставку осуществляют только высококлассные профессионалы своего дела. Ими были доставлены сотни животных
+                                        со всех точек мира: Африка, Бразилия, Австралия и с доставкой Вашего чешуйчатого малыша в Новосибирске они справятся,
+                                        уж поверьте.<br /></span>
                                 </div>
                             </li>
-                            <li className={classes.basket}>
+                            <li className={classes.basket + " " + classes.navigationButtons}>
                                 <img src={require("../images/basket_icon.png")} height="35px" alt="no" />
                                 <span>Корзина</span>
                             </li>
@@ -29,7 +39,7 @@ function Wrapper() {
             </header>
             <main className={classes.main}>
                 <Container>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nulla?</p>
+                    <GeckoList></GeckoList>
                 </Container>
             </main>
             <footer className={classes.footer + " " + classes.panel}>

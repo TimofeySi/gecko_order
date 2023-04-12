@@ -1,0 +1,4 @@
+.geckoList {
+    display: flex;
+    flex-direction: column;
+}
