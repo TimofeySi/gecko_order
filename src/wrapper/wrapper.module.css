@@ -13,16 +13,22 @@
 .panel {
     height: 80px;
     min-width: 1130px;
-    background-color: blueviolet;
+    background-color: #794000;
 
     display: flex;
     box-shadow: 0 0 15px 6px rgba(0, 0, 0, 0.411);
 }
 
-.header {}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
 
 
 .header .container {
+
+
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -48,13 +54,26 @@
     list-style-type: none;
 }
 
+.basketButton {
+    background-color: #965000;
+    color: #ffedd6;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.1s;
+}
+
+.basketButton:hover {
+    background-color: #be7724;
+    transform: scale(0.97);
+}
+
 .navigationButtons {
     margin: 0 0 0 40px;
     transition: color 0.3s ease 0s;
 }
 
 .navigationButtons:hover {
-    color: brown;
+    color: rgb(255, 134, 134);
 }
 
 .navigationButtons {
@@ -72,7 +91,7 @@
     margin: 0 5px;
 }
 
-.dropDown {
+.deliveryDropDown {
     font-size: 14px;
     top: calc(8px + 100%);
     right: 0;
@@ -80,26 +99,162 @@
     display: none;
     position: absolute;
     background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
     min-width: 300px;
     padding: 10px;
     z-index: 1;
 }
 
-.dropDown ul {
+.deliveryDropDown ul {
     list-style-type: circle;
 }
 
-.delivery:hover .dropDown {
+.delivery:hover .deliveryDropDown {
     display: block;
 }
 
 .basket {
+    position: relative;
     cursor: pointer;
 }
 
+.basketDropDown {
+    font-size: 16px;
+    top: 100%;
+    right: 0;
+    color: #000;
+    display: none;
+    position: absolute;
+    background-color: #fff9f6;
+    min-width: 500px;
+    padding: 10px;
+    z-index: 1;
+
+    border: 1px solid #777;
+    border-radius: 40px 0 40px 40px;
+}
+
+.basketDropDown>* {
+    margin: 10px 0;
+}
+
+.basket:hover .basketDropDown {
+    display: flex;
+    flex-direction: column;
+    cursor: auto;
+}
+
+.basketItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.totalPrice {
+    /* font-weight: bold; */
+    font-size: 20px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.basketTitle {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.userData {
+    display: flex;
+    flex-direction: column;
+}
+
+.geckoTable {
+    /* flex-shrink: 0; */
+    width: 100%;
+}
+
+.geckoTable td,
+th {
+    padding: 2px;
+}
+
+.geckoTable thead {
+    background-color: #ffe8cd;
+}
+
+.geckoTable tbody tr:nth-child(odd) {
+    background-color: #ffd7a9;
+}
+
+.geckoTable tbody tr:nth-child(even) {
+    background-color: #ffe8cd;
+}
+
+.cardNumberInput,
+.addressInput,
+.emailInput {
+    border: 1px solid #555;
+}
+
+.inputBlock {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.basketInput {
+    border-radius: 5px 0 0 5px;
+    width: 60%;
+}
+
+.inputButton {
+    padding: 5px;
+    /* border-radius: 0 5px 5px 0; */
+}
+
+.resetButton {
+    border-radius: 0 5px 5px 0;
+    position: relative;
+}
+
+.resetButton img {
+    height: 22px;
+    padding: 2px;
+}
+
+.basketButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.basketButtons>* {
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .main {
+    position: relative;
     margin: 20px 0;
     flex: 1 0 auto;
+}
+
+.main .container {
+    position: relative;
+}
+
+.errorMessage {
+    background-color: rgb(255, 118, 118);
+    color: rgb(163, 0, 0);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.errorMessage span {
+    display: table;
+    margin: 0 auto;
 }
 
 .footer {
@@ -141,4 +296,92 @@ p {
 
 .location h5 {
     color: darkblue;
+}
+
+.successMessage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #000000cc;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes entering {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.successMessage {
+    position: fixed;
+    font-size: 17px;
+
+    top: 100px;
+    left: 360px;
+
+    z-index: 2;
+
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.failureMessage {
+    position: fixed;
+    font-size: 17px;
+
+    top: 100px;
+    left: 360px;
+
+    z-index: 2;
+
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.successMessageEnterActive {
+    animation: entering .5s forwards;
+}
+
+.successMessageEnterDone {
+    top: 100px;
+}
+
+.successMessageExitActive {
+    top: 0;
+    transition: top 500ms;
+}
+
+.successMessageExitDone {
+    top: 0;
+
+}
+
+.testContainer span {
+    font-weight: bold;
+    color: #000;
 }
